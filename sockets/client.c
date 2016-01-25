@@ -36,7 +36,7 @@ int  main(int argc, char* argv[])
     printf("\nMaking a socket");
     /* make a socket */
     hSocket=socket(AF_INET,SOCK_STREAM,IPPROTO_TCP);
-
+    printf("...finished the socket");
     if(hSocket == SOCKET_ERROR)
     {
         printf("\nCould not make a socket\n");
@@ -45,6 +45,7 @@ int  main(int argc, char* argv[])
 
     /* get IP address from name */
     pHostInfo=gethostbyname(strHostName);
+    printf("Hostname obtained\n");
     /* copy address into long */
     memcpy(&nHostAddress,pHostInfo->h_addr,pHostInfo->h_length);
 
